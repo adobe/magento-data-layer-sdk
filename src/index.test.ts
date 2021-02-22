@@ -25,6 +25,7 @@ import {
   REMOVE_FROM_CART,
   SIGN_IN,
   SIGN_OUT,
+  UPDATE_CART
 } from "./types/events";
 
 beforeAll(() => {
@@ -249,6 +250,22 @@ describe("events", () => {
     expect(eventHandler).toHaveBeenCalledTimes(1);
     mdl.unsubscribe.signOut(eventHandler);
     mdl.publish.signOut();
+    expect(eventHandler).toHaveBeenCalledTimes(1);
+  });
+
+
+  test("update cart", async () => {
+    const eventHandler = jest.fn((eventObj, mdl) => {
+      expect(eventObj.event).toEqual(UPDATE_CART);
+      expect(mdl).toBeInstanceOf(MagentoDataLayer);
+    });
+
+    mdl.subscribe.updateCart(eventHandler);
+    expect(eventHandler).not.toHaveBeenCalled();
+    mdl.publish.updateCart();
+    expect(eventHandler).toHaveBeenCalledTimes(1);
+    mdl.unsubscribe.updateCart(eventHandler);
+    mdl.publish.updateCart();
     expect(eventHandler).toHaveBeenCalledTimes(1);
   });
 

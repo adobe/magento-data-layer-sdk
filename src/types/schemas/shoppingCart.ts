@@ -1,21 +1,35 @@
+import {Product} from "./product"
+
 export interface ShoppingCart {
   id?: string | null;
   items?: Array<ShoppingCartItem>;
-  prices?: Array<Subtotal>;
+  prices?: Array<Price>;
   total_quantity: number;
 }
 
-interface Subtotal {
-  value: number;
-  __typename: string;
+interface Price {
+  value?: number;
+  currency?: string;
+  __typename?: string;
 }
 
+
+
 interface ShoppingCartItem {
-  basePrice?: number;
-  cartItemId: number;
-  mainImageUrl?: string;
-  offerPrice: number;
-  productName: string;
-  productSku: string;
-  qty: number;
+  can_apply_msrp?: boolean;
+  foramtted_price?: string;
+  id?: string;
+  prices?: Array<Price>;
+  product?: Product;
+  configurable_options?: Array<ConfigurableOption>;
+  quantity?: number;
+}
+
+
+interface ConfigurableOption {
+  __typename?: string;
+  id?: number;
+  option_label?: string;
+  value_id?: number;
+  value_label?: string;
 }

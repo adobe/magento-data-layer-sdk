@@ -61,7 +61,7 @@ export const generateReferrerUrlContext = (
 export const generateShoppingCartContext = (
   overrides?: Partial<ShoppingCart>
 ): ShoppingCart => ({
-  itemsCount: 5,
+  total_quantity: 5,
   ...overrides,
 });
 

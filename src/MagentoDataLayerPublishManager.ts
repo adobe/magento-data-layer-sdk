@@ -15,6 +15,7 @@ import {
   REMOVE_FROM_CART,
   SIGN_IN,
   SIGN_OUT,
+  UPDATE_CART,
 } from "./types/events";
 import { MagentoDataLayerBase } from "./MagentoDataLayerBase";
 
@@ -92,5 +93,12 @@ export default class MagentoDataLayerPublishManager extends MagentoDataLayerBase
    */
   signOut(): void {
     this.pushEvent(SIGN_OUT);
+  }
+
+  /**
+   * Publish Cart Update events
+   */
+  updateCart(): void {
+    this.pushEvent(UPDATE_CART)
   }
 }

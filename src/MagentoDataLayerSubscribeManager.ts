@@ -15,6 +15,7 @@ import {
   PRODUCT_PAGE_VIEW,
   REFERRER_URL,
   REMOVE_FROM_CART,
+  UPDATE_CART,
   SIGN_IN,
   SIGN_OUT,
 } from "./types/events";
@@ -94,5 +95,12 @@ export default class MagentoDataLayerSubscribeManager extends MagentoDataLayerBa
    */
   signOut(handler: MagentoDataLayerEventHandler): void {
     this.addEventListener(SIGN_OUT, handler);
+  }
+
+  /** 
+   * Subscribe to Update Cart event
+   */
+  updateCart(handler: MagentoDataLayerEventHandler): void {
+    this.addEventListener(UPDATE_CART, handler);
   }
 }

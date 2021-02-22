@@ -1,13 +1,13 @@
 export interface ShoppingCart {
-  cartId?: number | null;
-  giftMessageSelected?: boolean;
-  giftWrappingSelected?: boolean;
+  id?: string | null;
   items?: Array<ShoppingCartItem>;
-  itemsCount: number;
-  possibleOnepageCheckout?: boolean;
-  subtotalAmount?: number;
-  subtotalExcludingTax?: number;
-  subtotalIncludingTax?: number;
+  prices?: Array<Subtotal>;
+  total_quantity: number;
+}
+
+interface Subtotal {
+  value: number;
+  __typename: string;
 }
 
 interface ShoppingCartItem {

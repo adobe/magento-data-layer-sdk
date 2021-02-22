@@ -16,6 +16,7 @@ import {
   REMOVE_FROM_CART,
   SIGN_IN,
   SIGN_OUT,
+  UPDATE_CART,
 } from "./types/events";
 import { MagentoDataLayer } from ".";
 
@@ -92,5 +93,12 @@ export default class MagentoDataLayerUnsubscribeManager extends MagentoDataLayer
    */
   signOut(handler: MagentoDataLayerEventHandler): void {
     this.removeEventListener(SIGN_OUT, handler);
+  }
+
+  /**
+   * Unsubscribe from Update Cart event
+   */
+  updateCart(handler: MagentoDataLayerEventHandler): void {
+    this.removeEventListener(UPDATE_CART, handler);
   }
 }

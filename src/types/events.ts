@@ -7,6 +7,7 @@ import { MagentoDataLayer } from "..";
 
 export const ADD_TO_CART = "add-to-cart";
 export const REMOVE_FROM_CART = "remove-from-cart";
+export const UPDATE_CART = "update-cart";
 export const INITIATE_CHECKOUT = "initiate-checkout";
 export const SIGN_OUT = "sign-out";
 export const SIGN_IN = "sign-in";
@@ -19,6 +20,7 @@ export const PRODUCT_PAGE_VIEW = "product-page-view";
 export type EventName =
   | typeof ADD_TO_CART
   | typeof REMOVE_FROM_CART
+  | typeof UPDATE_CART
   | typeof INITIATE_CHECKOUT
   | typeof SIGN_OUT
   | typeof SIGN_IN
@@ -34,7 +36,9 @@ export type MagentoDataLayerEventHandler = (
 ) => void;
 
 /**
+ * add-to-cart
  * remove-from-cart
+ * update-cart
  * initiate-checkout
  * sign-out
  * sign-in

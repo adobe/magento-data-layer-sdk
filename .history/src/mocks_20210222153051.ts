@@ -62,7 +62,6 @@ export const generateShoppingCartContext = (
   overrides?: Partial<ShoppingCart>
 ): ShoppingCart => ({
   total_quantity: 5,
-  id: "1",
   ...overrides,
 });
 

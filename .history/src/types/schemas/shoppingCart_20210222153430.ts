@@ -10,6 +10,7 @@ export interface ShoppingCart {
 interface Price {
   value: number;
   currency?: string;
+  __typename: string;
 }
 
 interface ShoppingCartItem {
@@ -23,6 +24,7 @@ interface ShoppingCartItem {
 }
 
 interface ConfigurableOption {
+  __typename: string;
   id: number;
   option_label: string;
   value_id: number;

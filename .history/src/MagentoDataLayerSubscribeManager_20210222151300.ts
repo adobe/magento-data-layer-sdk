@@ -15,9 +15,9 @@ import {
   PRODUCT_PAGE_VIEW,
   REFERRER_URL,
   REMOVE_FROM_CART,
+  UPDATE_CART,
   SIGN_IN,
   SIGN_OUT,
-  UPDATE_CART,
 } from "./types/events";
 import { MagentoDataLayer } from ".";
 

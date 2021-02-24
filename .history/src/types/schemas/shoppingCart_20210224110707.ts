@@ -14,7 +14,7 @@ interface Price {
 
 interface ShoppingCartItem {
   canApplyMsrp: boolean;
-  foramttedPrice: string;
+  foramtted_price: string;
   id: string;
   prices?: Array<Price>;
   product: Product;

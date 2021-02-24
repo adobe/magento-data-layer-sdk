@@ -14,7 +14,7 @@ interface Price {
 
 interface ShoppingCartItem {
   canApplyMsrp: boolean;
-  foramttedPrice: string;
+  foramtted_price: string;
   id: string;
   prices?: Array<Price>;
   product: Product;
@@ -24,7 +24,7 @@ interface ShoppingCartItem {
 
 interface ConfigurableOption {
   id: number;
-  optionLabel: string;
-  valueId: number;
-  valueLabel: string;
+  option_label: string;
+  value_id: number;
+  value_label: string;
 }

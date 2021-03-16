@@ -4,14 +4,14 @@
  */
 
 export interface Order {
-  orderId: number;
   appliedCouponCode: string;
   email: string;
-  paymentMethodName: string;
-  paymentMethodCode: string;
   grandTotal: number;
-  subtotalIncludingTax: number;
-  subtotalExcludingTax: number;
-  salesTax: number;
+  orderId: number;
   otherTax: number;
+  paymentMethodCode: string;
+  paymentMethodName: string;
+  salesTax: number;
+  subtotalExcludingTax: number;
+  subtotalIncludingTax: number;
 }

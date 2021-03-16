@@ -7,6 +7,7 @@ import mdl, { MagentoDataLayer } from "../src/index";
 import {
   generateCustomUrlContext,
   generateMagentoExtensionContext,
+  generateOrderContext,
   generatePageOffsetsContext,
   generateProductContext,
   generateReferrerUrlContext,
@@ -46,6 +47,13 @@ describe("contexts", () => {
     expect(mdl.context.getMagentoExtension()).toBeUndefined();
     mdl.context.setMagentoExtension(context);
     expect(mdl.context.getMagentoExtension()).toEqual(context);
+  });
+
+  test("order context", () => {
+    const context = generateOrderContext();
+    expect(mdl.context.getOrder()).toBeUndefined();
+    mdl.context.setOrder(context);
+    expect(mdl.context.getOrder()).toEqual(context);
   });
 
   test("page offset context", () => {

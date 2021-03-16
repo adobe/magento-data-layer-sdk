@@ -4,15 +4,18 @@
  */
 
 import { CustomUrl } from "../src/types/schemas/customUrl";
-import { MagentoExtension } from "../src/types/schemas/magentoExtension";
-import { PageOffset } from "../src/types/schemas/pageOffset";
-import { Product } from "../src/types/schemas/product";
-import { ReferrerUrl } from "../src/types/schemas/referrerUrl";
-import { SearchInput } from "../src/types/schemas/searchInput";
-import { SearchResults } from "../src/types/schemas/searchResults";
-import { Shopper } from "../src/types/schemas/shopper";
-import { ShoppingCart } from "../src/types/schemas/shoppingCart";
-import { StorefrontInstance } from "../src/types/schemas/storefrontInstance";
+import {
+  MagentoExtension,
+  Order,
+  PageOffset,
+  Product,
+  ReferrerUrl,
+  SearchInput,
+  SearchResults,
+  Shopper,
+  ShoppingCart,
+  StorefrontInstance,
+} from "../src/types/schemas/";
 
 export const generateCustomUrlContext = (
   overrides?: Partial<CustomUrl>
@@ -25,6 +28,20 @@ export const generateMagentoExtensionContext = (
   overrides?: Partial<MagentoExtension>
 ): MagentoExtension => ({
   magentoExtensionVersion: "1.0.0",
+  ...overrides,
+});
+
+export const generateOrderContext = (overrides?: Partial<Order>): Order => ({
+  appliedCouponCode: "",
+  email: "test@test.com",
+  grandTotal: 123,
+  orderId: 1293949,
+  otherTax: 5,
+  paymentMethodCode: "giftcard",
+  paymentMethodName: "giftcard",
+  salesTax: 7,
+  subtotalExcludingTax: 111,
+  subtotalIncludingTax: 123,
   ...overrides,
 });
 

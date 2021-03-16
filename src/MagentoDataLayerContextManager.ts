@@ -7,6 +7,7 @@ import { MagentoDataLayer } from ".";
 import {
   MAGENTO_EXTENSION_CONTEXT,
   PAGE_OFFSET_CONTEXT,
+  ORDER_CONTEXT,
   PRODUCT_CONTEXT,
   SEARCH_INPUT_CONTEXT,
   SEARCH_RESULTS_CONTEXT,
@@ -17,16 +18,19 @@ import {
   REFERRER_URL_CONTEXT,
 } from "./types/contexts";
 import { MagentoDataLayerBase } from "./MagentoDataLayerBase";
-import { MagentoExtension } from "./types/schemas/magentoExtension";
-import { PageOffset } from "./types/schemas/pageOffset";
-import { Product } from "./types/schemas/product";
-import { Shopper } from "./types/schemas/shopper";
-import { StorefrontInstance } from "./types/schemas/storefrontInstance";
-import { ShoppingCart } from "./types/schemas/shoppingCart";
-import { CustomUrl } from "./types/schemas/customUrl";
-import { ReferrerUrl } from "./types/schemas/referrerUrl";
-import { SearchInput } from "./types/schemas/searchInput";
-import { SearchResults } from "./types/schemas/searchResults";
+import {
+  MagentoExtension,
+  PageOffset,
+  Product,
+  Shopper,
+  StorefrontInstance,
+  ShoppingCart,
+  CustomUrl,
+  ReferrerUrl,
+  SearchInput,
+  SearchResults,
+  Order,
+} from "./types/schemas/";
 
 export default class MagentoDataLayerContextManager extends MagentoDataLayerBase {
   constructor(mdl: MagentoDataLayer) {
@@ -74,6 +78,20 @@ export default class MagentoDataLayerContextManager extends MagentoDataLayerBase
    */
   setMagentoExtension(context: MagentoExtension): void {
     this.setContext<MagentoExtension>(MAGENTO_EXTENSION_CONTEXT, context);
+  }
+
+  /**
+   * Get order context
+   */
+  getOrder(): Order {
+    return this.getContext<Order>(ORDER_CONTEXT);
+  }
+
+  /**
+   * Set order context
+   */
+  setOrder(context: Order): void {
+    this.setContext<Order>(ORDER_CONTEXT, context);
   }
 
   /**
